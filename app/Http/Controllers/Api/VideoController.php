@@ -9,7 +9,12 @@ use Auth,Hash,Input,Session,Redirect,Mail,URL,Str,Config,DB,Response,View;
 class VideoController extends ApiBaseController
 {
 
-  
+  /*
+    @Description: Function for Give Total Video Size
+    @Author: Niraj
+    @Output: - return users videos total size
+    @Date: 26-07-2019
+  */
   public function getTotalVideoSize() 
   {
     try
@@ -60,9 +65,12 @@ class VideoController extends ApiBaseController
     return response(array('code' => $code,'msg' => $msg,"flag"=>$flag,'data' => $response),$http_code);
   }
 
-
- 
- 
+  /*
+    @Description: Function for Give Video Metadata
+    @Author: Niraj
+    @Output: - return videos metadata detail
+    @Date: 26-07-2019
+  */
   public function getVideoMetaData($videoid) 
   {
     try
@@ -112,9 +120,12 @@ class VideoController extends ApiBaseController
     return response(array('code' => $code,'msg' => $msg,"flag"=>$flag,'data' => $response),$http_code);
   }
 
-
-  
-  
+  /*
+    @Description: Function for updates Video size and Viewers Count
+    @Author: Niraj
+    @Output: - return videos metadata by Video ID
+    @Date: 26-07-2019
+  */
   public function updateVideoSizeViewers($videoid) 
   {
     try
