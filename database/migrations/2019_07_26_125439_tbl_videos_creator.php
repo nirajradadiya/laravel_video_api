@@ -13,7 +13,13 @@ class TblVideosCreator extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_videos_creator', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('video_id')->comment = "Video ID of Vidoes Meta Data Table";
+            $table->string('user_name', 255)->comment = "Name Of User";
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class TblVideosCreator extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_videos_creator');
     }
 }
